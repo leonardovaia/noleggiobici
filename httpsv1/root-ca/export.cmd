@@ -1,0 +1,1 @@
+keytool -exportcert -keystore ca.jks -storepass Marconi5a -alias root-ca -rfc -file ca.pem

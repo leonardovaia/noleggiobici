@@ -1,0 +1,1 @@
+keytool -genkeypair -keyalg RSA -keysize 3072 -alias root-ca -dname "CN=My Root CA,OU=Development,O=My Organization,C=DE" -ext BC:c=ca:true -ext KU=keyCertSign -validity 3650 -keystore ca.jks -storepass Marconi5a -keypass Marconi5a

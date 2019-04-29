@@ -1,0 +1,28 @@
+#spring.datasource.driverClassName=com.mysql.jdbc.Driver
+#spring.datasource.url=jdbc:mysql://localhost:3306/noleggio?createDatabaseIfNotExist=true
+spring.datasource.url=jdbc:mysql://localhost:3306/noleggio?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+spring.jpa.show-sql = true
+spring.datasource.username =root
+spring.datasource.password =root
+## Hibernate Properties
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.initialization-mode=never
+org.springframework.security = DEBUG
+# ==============================================================
+# = Spring Security / Queries for AuthenticationManagerBuilder
+# ==============================================================
+spring.queries.users-query=select mail, password, active from utenti where mail=?
+spring.queries.roles-query=select u.mail, r.ruolo from utenti u inner join utenti_ruoli ur on(u.id_utente=ur.id_utente) inner join ruoli r on(ur.id_ruolo=r.id_ruolo) where u.mail=?
+security.basic.enabled=false
+
+
+server.http2.enabled=true
+server.port=8443
+server.ssl.enabled=true
+server.ssl.key-store=classpath:server.jks
+server.ssl.key-store-type=PKCS12
+server.ssl.key-store-password=Marconi
+server.ssl.key-alias=localhost
+server.ssl.key-password=Marconi
